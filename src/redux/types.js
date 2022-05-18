@@ -1,0 +1,7 @@
+export const Types = {
+    ADD_TODO: 'ADD_TODO',
+    MODIFY_TODO: 'MODIFY_TODO',
+    DELETE_TODO: 'DELETE_TODO',
+    TOGGLE_TODO:'TOGGLE_TODO',
+    UPDATE_FILTER:'UPDATE_FILTER'
+  };
