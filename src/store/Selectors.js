@@ -2,8 +2,7 @@ import {createSelector} from "reselect";
 
 export const  todoSelector=({todo})=>todo.tasks;
 export const filterSelector= ({filter})=>filter;
-
-
+export const onlineTodoSelector =({onlineTodo})=>onlineTodo.todos;
 
 
 export const filteredTodoSelector= ({todo, filter})=>{

@@ -3,7 +3,7 @@ import { Types } from "./types";
 const INITIAL_STATE = {
   tasks: [{
     id:1,
-    text:"Bonjour",
+    title:"Bonjour",
     completed:false
   }]
 };
@@ -22,7 +22,7 @@ export const todoReducer = (state = INITIAL_STATE, action) => {
           if (task.id === action.payload.id) {
             return {
               ...task,
-              text: action.payload.text,
+              text: action.payload.title,
               completed: !action.payload.completed
             };
           } else return task;

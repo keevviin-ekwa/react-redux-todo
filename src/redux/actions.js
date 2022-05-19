@@ -16,33 +16,39 @@ export const deleteTodoAction = (task) => ({
 });
 
 export const loadingAction = () => ({
-    type: Types.LOADING_TODO
+
+    type: Types.LOADING_ACTION
+
 });
 
 export const successAction = (tasks) => ({
-    type: Types.SUCCESS_TODO,
+    type: Types.SUCCESS_ACTION,
     payload: tasks
 });
 
 export const errorAction = (error) => ({
-    type: Types.ERROR_TODO,
+    type: Types.ERROR_ACTION,
     payload: error
 });
 
 
 
 export const getOnlineTodos = () => {
-    return (dispatch) => {
+
+    return async (dispatch) => {
         dispatch(loadingAction());
-        fetch("https://jsonplaceholder.typicode.com/todos")
+        await fetch("https://jsonplaceholder.typicode.com/todos")
             .then((response) => response.json())
             .then((json) => {
-                dispatch(loadingAction());
+                dispatch(loadingAction);
                 dispatch(successAction(json));
+
+
             })
             .catch((error) => {
-                dispatch(loadingAction());
+                dispatch(loadingAction);
                 dispatch(errorAction(error));
+
             });
     };
 };

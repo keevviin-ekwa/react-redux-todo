@@ -8,7 +8,7 @@ function AddTodoForm(props) {
     const dispacth= useDispatch();
     function handleSubmit(e){
         e.preventDefault()
-        dispacth(addTodoAction({id:uuidv4(),text:input.current.value,completed:false}))
+        dispacth(addTodoAction({id:uuidv4(),title:input.current.value,completed:false}))
         input.current.value='';
         input.current.focus();
 

@@ -13,7 +13,7 @@ function TodoItem({todo,onToggle,deleteTodo}) {
                            onChange={()=>onToggle(todo)}
                     />
                 </div>
-               <span className="input-group-text"> {todo.text}</span>
+               <span className="input-group-text"> {todo.title}</span>
                 <button className="btn btn-danger input-group-text" onClick={()=>deleteTodo(todo)}>delete</button>
             </div>
 
